@@ -44,7 +44,7 @@ function Main({ list, setList }) {
     setRandom(!random);
   };
 
-  const mainStyle = () => {
+  const mainStyle = {
     display: "grid",
     width: "80%",
     gridTemplateColumns: "repeat(2, 1fr)",
