@@ -44,6 +44,12 @@ function Main({ list, setList }) {
     setRandom(!random);
   };
 
+  const mainStyle = () => {
+    display: "grid",
+    width: "80%",
+    gridTemplateColumns: "repeat(2, 1fr)",
+  };
+
   return (
     <div className="ui two column centered grid">
       <p>Created by: Vince Baylon</p>
@@ -54,7 +60,7 @@ function Main({ list, setList }) {
         </button>
       </div>
 
-      <div className="column">{random ? cardContent : cardContent}</div>
+      <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
     </div>
   );
 }
