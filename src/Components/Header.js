@@ -25,7 +25,7 @@ function Header() {
   return (
     <header style={headerStyle}>
       <div style={logoStyle}>
-        <p>2022 FFL DRAFT LOTTERY</p>
+        <p>2024 FFL DRAFT LOTTERY</p>
       </div>
     </header>
   );
