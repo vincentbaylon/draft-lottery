@@ -15,32 +15,18 @@ function Main({ list, setList }) {
     return <Card key={index} eachList={eachList} order={i} />;
   });
 
-  const shuffleArr = (array) => {
-    let i = array.length - 1;
-    for (; i > 0; i--) {
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      [array[i], array[j]] = [array[j], array[i]];  // Swap elements using destructuring
     }
     return array;
   };
-
-  const shuffleArrMore = (array) => {
-    let i = array.length - 1;
-    for (; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    }
-    return array;
-  };
-
+  
   const handleRandom = () => {
-    const randomize = shuffleArr(list);
-    const randomizeAgain = shuffleArrMore(randomize);
-    setList(randomizeAgain);
+    let shuffledList = shuffleArray([...list]);  // Clone list if you don't want to modify the original array
+    shuffledList = shuffleArray(shuffledList);  // Shuffle again if needed
+    setList(shuffledList);
     setRandom(!random);
   };
 
