@@ -1,15 +1,16 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
 
-function Main({ list }) {
+function Main({ list, setList }) {
   const [randomArr, setRandomArr] = useState(list);
+  const [random, setRandom] = useState(true);
 
   useEffect(() => {
     console.log("MAIN");
   }, [randomArr]);
 
   let i = 0;
-  const cardContent = randomArr.map((eachList, index) => {
+  const cardContent = list.map((eachList, index) => {
     i++;
     return <Card key={index} eachList={eachList} order={i} />;
   });
@@ -21,10 +22,12 @@ function Main({ list }) {
     }
     return array;
   };
-
+  
   const handleRandom = () => {
-    let shuffledList = shuffleArray([...randomArr]);  // Clone randomArr to avoid mutating the original array
-    setRandomArr(shuffledList);
+    let shuffledList = shuffleArray([...list]);  // Clone list if you don't want to modify the original array
+    shuffledList = shuffleArray(shuffledList);  // Shuffle again if needed
+    setList(shuffledList);
+    setRandom(!random);
   };
 
   const mainStyle = {
@@ -43,9 +46,7 @@ function Main({ list }) {
         </button>
       </div>
 
-      <div className="column" style={mainStyle}>
-        {cardContent}
-      </div>
+      <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
     </div>
   );
 }
