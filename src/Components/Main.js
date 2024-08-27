@@ -51,7 +51,9 @@ function Main({ list, setList }) {
           RANDOMIZE
         </button>
       </div>
-      <h4 style={centerStyle}>Counter: {randomCount}</h4>
+      <div className="row centered">
+        <h4>Counter: {randomCount}</h4>
+      </div>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
     </div>
