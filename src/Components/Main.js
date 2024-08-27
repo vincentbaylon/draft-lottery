@@ -42,8 +42,10 @@ function Main({ list, setList }) {
     gridTemplateColumns: "repeat(2, 1fr)",
   };
 
-  const centerStyle = {
-    textAlign: "center",
+  const clearButtonStyle = {
+    color: 'red',
+    paddingLeft: '5px',
+    cursor: 'pointer'
   }
 
   return (
@@ -57,7 +59,7 @@ function Main({ list, setList }) {
       </div>
       <div className="row centered">
         <h4>Counter: {randomCount}</h4>
-        <button className="small red" onClick={handleResetCounter} style={{ paddingLeft: '5px' }}>Reset</button>
+        <p style={clearButtonStyle} onClick={handleResetCounter}>Reset</p>
       </div>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
