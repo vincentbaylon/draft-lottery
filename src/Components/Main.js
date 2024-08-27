@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 function Main({ list, setList }) {
   const [randomArr, setRandomArr] = useState(list);
   const [random, setRandom] = useState(true);
+  const [randomCount, setRandomCount] = useState(0);
 
   useEffect(() => {
     console.log("MAIN");
@@ -28,6 +29,7 @@ function Main({ list, setList }) {
     shuffledList = shuffleArray(shuffledList);  // Shuffle again if needed
     setList(shuffledList);
     setRandom(!random);
+    setRandomCount(prevCount => prevCount + 1);
   };
 
   const mainStyle = {
@@ -44,6 +46,7 @@ function Main({ list, setList }) {
         <button className="massive ui red button" onClick={handleRandom}>
           RANDOMIZE
         </button>
+        <h3>Counter: {randomCount}</h3>
       </div>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
