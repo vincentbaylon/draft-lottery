@@ -32,6 +32,10 @@ function Main({ list, setList }) {
     setRandomCount(prevCount => prevCount + 1);
   };
 
+  const handleResetCounter = () => {
+    setRandomCount(0)
+  }
+
   const mainStyle = {
     display: "grid",
     width: "80%",
@@ -53,6 +57,7 @@ function Main({ list, setList }) {
       </div>
       <div className="row centered">
         <h4>Counter: {randomCount}</h4>
+        <button className="small ui red button" onClick={handleResetCounter}>Reset</button>
       </div>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
