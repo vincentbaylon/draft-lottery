@@ -57,7 +57,7 @@ function Main({ list, setList }) {
       </div>
       <div className="row centered">
         <h4>Counter: {randomCount}</h4>
-        <button className="small ui red button" onClick={handleResetCounter}>Reset</button>
+        <button className="small red" onClick={handleResetCounter} style={{ paddingLeft: '5px' }}>Reset</button>
       </div>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
