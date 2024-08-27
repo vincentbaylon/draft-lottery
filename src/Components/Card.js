@@ -7,7 +7,8 @@ const divStyle = {
     padding: '10px',
     width: '100%',
     height: '125px',
-    color: 'white'
+    color: 'white',
+    cursor: 'pointer',
 }
 
 const flipStyle = {
