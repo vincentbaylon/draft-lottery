@@ -46,9 +46,8 @@ function Main({ list, setList }) {
         <button className="massive ui red button" onClick={handleRandom}>
           RANDOMIZE
         </button>
-        <br></br>
-        <h4>Counter: {randomCount}</h4>
       </div>
+      <h4>Counter: {randomCount}</h4>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
     </div>
