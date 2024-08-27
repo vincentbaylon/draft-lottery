@@ -46,6 +46,7 @@ function Main({ list, setList }) {
         <button className="massive ui red button" onClick={handleRandom}>
           RANDOMIZE
         </button>
+        <br></br>
         <h3>Counter: {randomCount}</h3>
       </div>
 
