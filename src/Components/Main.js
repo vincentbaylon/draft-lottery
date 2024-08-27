@@ -38,6 +38,10 @@ function Main({ list, setList }) {
     gridTemplateColumns: "repeat(2, 1fr)",
   };
 
+  const centerStyle = {
+    textAlign: "center",
+  }
+
   return (
     <div className="ui two column centered grid">
       <p>Created by: Vince Baylon</p>
@@ -47,7 +51,7 @@ function Main({ list, setList }) {
           RANDOMIZE
         </button>
       </div>
-      <h4>Counter: {randomCount}</h4>
+      <h4 style={centerStyle}>Counter: {randomCount}</h4>
 
       <div className="column" style={mainStyle}>{random ? cardContent : cardContent}</div>
     </div>
