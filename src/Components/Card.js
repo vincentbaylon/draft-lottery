@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
 const divStyle = {
-    margin: '15px',
     textAlign: 'center',
     padding: '10px',
     width: '100%',
